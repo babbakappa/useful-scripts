@@ -2,7 +2,9 @@
 # Здесь написаны сценарии для меню
 import sys
 
-import music
+import file_translate
+import file_translate_android
+
 
 def main():
     while True:
@@ -11,12 +13,17 @@ def main():
         process_input(choice)
 
 def print_menu():
-    print("1) Распределить музыку в двух папках")
+    print("МЕНЮ")
+    print()
+    print("1) Синхронизировать файлы между папками")
+    print("2) Синхронизировать файлы между ПК и телефоном (Android) (нужна утилита adb)")
     print()
     print("0) Выход")
 
 def process_input(choice):
     if choice == "1":
-        music.scenario()
+        file_translate.scenario()
+    elif choice == "2":
+        file_translate_android.scenario()
     else:
         sys.exit(0)
